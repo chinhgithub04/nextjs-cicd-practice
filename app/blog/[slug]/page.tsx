@@ -4,6 +4,12 @@ type Params = {
   };
 };
 
+const staticSlugs = ["test"];
+
+export function generateStaticParams() {
+  return staticSlugs.map((slug) => ({ slug }));
+}
+
 export async function generateMetadata({ params }: Params) {
   return { title: `Post: ${params.slug}` };
 }
